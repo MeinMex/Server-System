@@ -1,0 +1,7 @@
+name: ServerSystem
+version: '${project.version}'
+main: me.meinmex.serversystem.serversystem.ServerSystem
+api-version: 1.19
+authors: [ MeinMex ]
+description: Server System Plugin
+website: Soon
