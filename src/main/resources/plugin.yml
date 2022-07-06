@@ -5,3 +5,7 @@ api-version: 1.19
 authors: [ MeinMex ]
 description: Server System Plugin
 website: Soon
+commands:
+  Help:
+    aliases: [ h, help ]
+    usage: /help
