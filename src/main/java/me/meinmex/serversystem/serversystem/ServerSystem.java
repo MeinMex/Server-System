@@ -2,6 +2,7 @@ package me.meinmex.serversystem.serversystem;
 
 import me.meinmex.serversystem.serversystem.commands.HelpCommand;
 import me.meinmex.serversystem.serversystem.listeners.JoinListener;
+import me.meinmex.serversystem.serversystem.listeners.QuitListener;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.PluginManager;
@@ -44,9 +45,13 @@ public final class ServerSystem extends JavaPlugin {
         configuration.addDefault("ServerSystem.Join.Message.All", "§a%player% joined the server!");
         configuration.addDefault("ServerSystem.Join.Message.Privat", "§a%player% welcome on the server!");
 
+        configuration.addDefault("ServerSystem.Quit.Message.All", "§a%player% left the server!");
+
         Objects.requireNonNull(getCommand("Help")).setExecutor(new HelpCommand());
 
         pluginManager.registerEvents(new JoinListener(), this);
+        pluginManager.registerEvents(new QuitListener(), this);
+
 
         saveConfig();
     }
