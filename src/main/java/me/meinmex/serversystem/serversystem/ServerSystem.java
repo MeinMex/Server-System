@@ -46,7 +46,7 @@ public final class ServerSystem extends JavaPlugin {
         configuration.addDefault("ServerSystem.Commands.Messages.Help.ArgsWrong", "&cWrong arguments! Use: /help");
         configuration.addDefault("ServerSystem.Commands.Messages.Help", "&aHelp not set yet!");
 
-        configuration.addDefault("ServerSystem.Commands.Messages.Fly.ArgsWrong", "&cWrong arguments! Use: /help");
+        configuration.addDefault("ServerSystem.Commands.Messages.Fly.ArgsWrong", "&cWrong arguments! Use: /fly");
         configuration.addDefault("ServerSystem.Commands.Messages.Fly.Enabled", "&aFly message not set yet! (enable)");
         configuration.addDefault("ServerSystem.Commands.Messages.Fly.Disabled", "&aFly message not set yet! (disable)!");
 
