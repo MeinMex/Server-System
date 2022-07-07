@@ -10,5 +10,5 @@ commands:
     aliases: [ h, help ]
     usage: /help
   Fly:
-    aliases: [ f ]
+    aliases: [ f, fly ]
     usage: /fly
