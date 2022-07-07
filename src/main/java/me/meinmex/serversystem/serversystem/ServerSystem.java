@@ -8,7 +8,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.Objects;
 
 public final class ServerSystem extends JavaPlugin {
-
+    //Credits MeinMex#5023
     public static String Version = "0.0.1#DEVELOPING";
     public static String Name = "ServerSystem ";
     public static String Author = "MeinMex#5023";

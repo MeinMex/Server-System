@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import java.util.Objects;
 
 public class HelpCommand implements CommandExecutor {
+    //Credits MeinMex#5023
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         FileConfiguration configuration = ServerSystem.getInstance().configuration;
