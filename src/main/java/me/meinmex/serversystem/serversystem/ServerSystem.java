@@ -1,6 +1,7 @@
 package me.meinmex.serversystem.serversystem;
 
 import me.meinmex.serversystem.serversystem.commands.HelpCommand;
+import me.meinmex.serversystem.serversystem.listeners.DeathListener;
 import me.meinmex.serversystem.serversystem.listeners.JoinListener;
 import me.meinmex.serversystem.serversystem.listeners.QuitListener;
 import org.bukkit.Bukkit;
@@ -47,10 +48,14 @@ public final class ServerSystem extends JavaPlugin {
 
         configuration.addDefault("ServerSystem.Quit.Message.All", "§a%player% left the server!");
 
+        configuration.addDefault("ServerSystem.Death.Message.All", "§a%player% died!");
+        configuration.addDefault("ServerSystem.Death.Message.Privat", "");
+
         Objects.requireNonNull(getCommand("Help")).setExecutor(new HelpCommand());
 
         pluginManager.registerEvents(new JoinListener(), this);
         pluginManager.registerEvents(new QuitListener(), this);
+        pluginManager.registerEvents(new DeathListener(), this);
 
 
         saveConfig();
