@@ -35,20 +35,20 @@ public final class ServerSystem extends JavaPlugin {
         Bukkit.getConsoleSender().sendMessage("§aAuthor: " + Author);
         Bukkit.getConsoleSender().sendMessage("§aConfig loaded!");
 
-        configuration.addDefault("ServerSystem.Prefix", "§8[§7System§8] §7|§r ");
-        configuration.addDefault("ServerSystem.NoPermissions", "§8[§7System§8] §7|§r §cYou need the following permissions to use this command:§4 ");
+        configuration.addDefault("ServerSystem.Prefix", "&8[&7System&8] &7|&r ");
+        configuration.addDefault("ServerSystem.NoPermissions", "&8[&7System&8] &7|&r &cYou need the following permissions to use this command:&4 ");
 
         configuration.addDefault("ServerSystem.Commands.Permission.Help", "ServerSystem.Help");
 
-        configuration.addDefault("ServerSystem.Commands.Messages.ArgsWrong.Help", "§cWrong arguments! Use: /help");
-        configuration.addDefault("ServerSystem.Commands.Messages.Help", "§aHelp not set yet!");
+        configuration.addDefault("ServerSystem.Commands.Messages.ArgsWrong.Help", "&cWrong arguments! Use: /help");
+        configuration.addDefault("ServerSystem.Commands.Messages.Help", "&aHelp not set yet!");
 
-        configuration.addDefault("ServerSystem.Join.Message.All", "§a%player% joined the server!");
-        configuration.addDefault("ServerSystem.Join.Message.Privat", "§a%player% welcome on the server!");
+        configuration.addDefault("ServerSystem.Join.Message.All", "&a%player% joined the server!");
+        configuration.addDefault("ServerSystem.Join.Message.Privat", "&a%player% welcome on the server!");
 
-        configuration.addDefault("ServerSystem.Quit.Message.All", "§a%player% left the server!");
+        configuration.addDefault("ServerSystem.Quit.Message.All", "&a%player% left the server!");
 
-        configuration.addDefault("ServerSystem.Death.Message.All", "§a%player% died!");
+        configuration.addDefault("ServerSystem.Death.Message.All", "&a%player% died!");
         configuration.addDefault("ServerSystem.Death.Message.Privat", "");
 
         Objects.requireNonNull(getCommand("Help")).setExecutor(new HelpCommand());
