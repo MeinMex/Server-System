@@ -16,7 +16,7 @@ public class DeathListener implements Listener {
         FileConfiguration configuration = ServerSystem.getInstance().configuration;
         Player player = event.getEntity();
         event.setDeathMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Death.Message.All")).replace("%player%", player.getName()));
-
+        player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Death.Message.Privat")).replace("%player%", player.getName()));
     }
 
 }
