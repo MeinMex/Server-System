@@ -23,9 +23,10 @@ public class FlyCommand implements CommandExecutor {
             player.sendMessage(configuration.getString("ServerSystem.Prefix") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Fly.ArgsWrong")).replace("&", "§"));
             return true;
         }
-        if(player.isFlying()){
+        if(player.getAllowFlight()){
             player.setFlying(false);
             player.sendMessage(configuration.getString("ServerSystem.Prefix") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Fly.Disabled")).replace("&", "§"));
+            return true;
         }
         player.setFlying(true);
         player.sendMessage(configuration.getString("ServerSystem.Prefix") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Fly.Enabled")).replace("&", "§"));
