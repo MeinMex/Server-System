@@ -1,5 +1,5 @@
 name: ServerSystem
-version: '${project.version}'
+version: 0.0.3#Dev
 main: me.meinmex.serversystem.serversystem.ServerSystem
 api-version: 1.19
 authors: [ MeinMex ]
@@ -9,3 +9,6 @@ commands:
   Help:
     aliases: [ h, help ]
     usage: /help
+  Fly:
+    aliases: [ f ]
+    usage: /fly
