@@ -12,3 +12,6 @@ commands:
   Fly:
     aliases: [ f, fly ]
     usage: /fly
+  ClearChat:
+    aliases: [ c, cc ]
+    usage: /clearchat

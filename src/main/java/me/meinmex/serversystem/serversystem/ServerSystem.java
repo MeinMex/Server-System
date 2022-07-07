@@ -1,5 +1,6 @@
 package me.meinmex.serversystem.serversystem;
 
+import me.meinmex.serversystem.serversystem.commands.ClearChatCommand;
 import me.meinmex.serversystem.serversystem.commands.FlyCommand;
 import me.meinmex.serversystem.serversystem.commands.HelpCommand;
 import me.meinmex.serversystem.serversystem.listeners.DeathListener;
@@ -41,7 +42,8 @@ public final class ServerSystem extends JavaPlugin {
 
         configuration.addDefault("ServerSystem.Commands.Permission.Help", "ServerSystem.Help");
         configuration.addDefault("ServerSystem.Commands.Permission.Fly", "ServerSystem.Fly");
-
+        configuration.addDefault("ServerSystem.Commands.Permission.ClearChat", "ServerSystem.ClearChat");
+        configuration.addDefault("ServerSystem.Commands.Permission.ClearChat.Bypass", "ServerSystem.ClearChat.Bypass");
 
         configuration.addDefault("ServerSystem.Commands.Messages.Help.ArgsWrong", "&cWrong arguments! Use: /help");
         configuration.addDefault("ServerSystem.Commands.Messages.Help", "&aHelp not set yet!");
@@ -49,6 +51,9 @@ public final class ServerSystem extends JavaPlugin {
         configuration.addDefault("ServerSystem.Commands.Messages.Fly.ArgsWrong", "&cWrong arguments! Use: /fly");
         configuration.addDefault("ServerSystem.Commands.Messages.Fly.Enabled", "&aFly message not set yet! (enable)");
         configuration.addDefault("ServerSystem.Commands.Messages.Fly.Disabled", "&aFly message not set yet! (disable)!");
+
+        configuration.addDefault("ServerSystem.Commands.Messages.ClearChat.ArgsWrong", "&cWrong arguments! Use: /clearchat");
+        configuration.addDefault("ServerSystem.Commands.Messages.ClearChat.Success", "%player% &cCleared the Chat!");
 
         configuration.addDefault("ServerSystem.Join.Message.All", "&a%player% joined the server!");
         configuration.addDefault("ServerSystem.Join.Message.Privat", "&a%player% welcome on the server!");
@@ -60,6 +65,8 @@ public final class ServerSystem extends JavaPlugin {
 
         Objects.requireNonNull(getCommand("Help")).setExecutor(new HelpCommand());
         Objects.requireNonNull(getCommand("Fly")).setExecutor(new FlyCommand());
+        Objects.requireNonNull(getCommand("ClearChat")).setExecutor(new ClearChatCommand());
+
 
         pluginManager.registerEvents(new JoinListener(), this);
         pluginManager.registerEvents(new QuitListener(), this);
