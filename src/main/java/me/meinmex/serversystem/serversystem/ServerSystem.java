@@ -1,15 +1,17 @@
 package me.meinmex.serversystem.serversystem;
 
 import me.meinmex.serversystem.serversystem.commands.HelpCommand;
+import me.meinmex.serversystem.serversystem.listeners.JoinListener;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.Objects;
 
 public final class ServerSystem extends JavaPlugin {
     //Credits MeinMex#5023
-    public static String Version = "0.0.1#DEVELOPING";
+    public static String Version = "0.0.2#DEVELOPING";
     public static String Name = "ServerSystem ";
     public static String Author = "MeinMex#5023";
     public static ServerSystem instance;
@@ -25,6 +27,7 @@ public final class ServerSystem extends JavaPlugin {
         instance = this;
         FileConfiguration configuration = getConfig();
         configuration.options().copyDefaults(true);
+        PluginManager pluginManager = Bukkit.getPluginManager();
         Bukkit.getConsoleSender().sendMessage(Name + "enabled!");
         Bukkit.getConsoleSender().sendMessage("§aVersion: " + Version);
         Bukkit.getConsoleSender().sendMessage("§aAuthor: " + Author);
@@ -38,7 +41,13 @@ public final class ServerSystem extends JavaPlugin {
         configuration.addDefault("ServerSystem.Commands.Messages.ArgsWrong.Help", "§cWrong arguments! Use: /help");
         configuration.addDefault("ServerSystem.Commands.Messages.Help", "§aHelp not set yet!");
 
+        configuration.addDefault("ServerSystem.Join.Message.All", "§a%player% joined the server!");
+        configuration.addDefault("ServerSystem.Join.Message.Privat", "§a%player% welcome on the server!");
+
         Objects.requireNonNull(getCommand("Help")).setExecutor(new HelpCommand());
+
+        pluginManager.registerEvents(new JoinListener(), this);
+
         saveConfig();
     }
 
