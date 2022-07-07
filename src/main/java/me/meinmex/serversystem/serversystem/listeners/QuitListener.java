@@ -15,7 +15,7 @@ public class QuitListener implements Listener {
     public void onQuit(PlayerQuitEvent event) {
         FileConfiguration configuration = ServerSystem.getInstance().configuration;
         Player player = event.getPlayer();
-        event.setQuitMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Quit.Message.All")).replace("%player%", player.getName()));
+        event.setQuitMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Quit.Message.All")).replace("%player%", player.getName()).replace("&", "§"));
     }
 
 }

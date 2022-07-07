@@ -14,7 +14,7 @@ public class JoinListener implements Listener {
     public void onJoin(PlayerJoinEvent event){
         FileConfiguration configuration = ServerSystem.getInstance().configuration;
         Player player = event.getPlayer();
-        event.setJoinMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Join.Message.All")).replace("%player%", player.getName()));
-        player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Join.Message.Privat")).replace("%player%", player.getName()));
+        event.setJoinMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Join.Message.All")).replace("%player%", player.getName()).replace("&", "§"));
+        player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Join.Message.Privat")).replace("%player%", player.getName()).replace("&", "§"));
     }
 }

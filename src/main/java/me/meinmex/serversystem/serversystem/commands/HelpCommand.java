@@ -16,14 +16,14 @@ public class HelpCommand implements CommandExecutor {
         FileConfiguration configuration = ServerSystem.getInstance().configuration;
         Player player = (Player) sender;
         if (!player.hasPermission(Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Permission.Help")))) {
-            player.sendMessage(configuration.getString("ServerSystem.NoPermissions") + configuration.getString("ServerSystem.Commands.Permission.Help"));
+            player.sendMessage(configuration.getString("ServerSystem.NoPermissions") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Permission.Help")).replace("&", "§"));
             return true;
         }
         if (!(args.length == 0)) {
-            player.sendMessage(configuration.getString("ServerSystem.Prefix") + configuration.getString("ServerSystem.Commands.Messages.ArgsWrong.Help"));
+            player.sendMessage(configuration.getString("ServerSystem.Prefix") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.ArgsWrong.Help")).replace("&", "§"));
             return true;
         }
-        player.sendMessage(configuration.getString("ServerSystem.Prefix") + configuration.getString("ServerSystem.Commands.Messages.Help"));
+        player.sendMessage(configuration.getString("ServerSystem.Prefix") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Help")).replace("&", "§"));
 
         return true;
     }
