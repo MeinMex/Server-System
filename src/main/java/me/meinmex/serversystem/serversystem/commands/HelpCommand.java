@@ -15,7 +15,7 @@ public class HelpCommand implements CommandExecutor {
         FileConfiguration configuration = ServerSystem.getInstance().configuration;
         Player player = (Player) sender;
         if (!player.hasPermission(Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Permission.Help")))) {
-            player.sendMessage(configuration.getString("ServerSystem.Core.Prefex.NoPermissionsPrefix") + configuration.getString("ServerSystem.Commands.Permission.Help"));
+            player.sendMessage(configuration.getString("ServerSystem.NoPermissions") + configuration.getString("ServerSystem.Commands.Permission.Help"));
             return true;
         }
         if (!(args.length == 0)) {

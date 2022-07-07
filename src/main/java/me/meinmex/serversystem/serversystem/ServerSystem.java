@@ -35,7 +35,7 @@ public final class ServerSystem extends JavaPlugin {
 
         configuration.addDefault("ServerSystem.Commands.Permission.Help", "ServerSystem.Help");
 
-        configuration.addDefault("ServerSystem.Commands.Messages.ArgsWrong.Help", "§cWrong arguments! Right: /help");
+        configuration.addDefault("ServerSystem.Commands.Messages.ArgsWrong.Help", "§cWrong arguments! Use: /help");
         configuration.addDefault("ServerSystem.Commands.Messages.Help", "§aHelp not set yet!");
 
         Objects.requireNonNull(getCommand("Help")).setExecutor(new HelpCommand());
