@@ -20,18 +20,18 @@ public class FlyCommand implements CommandExecutor {
             return true;
         }
         if (!(args.length == 0)) {
-            player.sendMessage(configuration.getString("ServerSystem.Prefix") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Fly.ArgsWrong")).replace("&", "§"));
+            player.sendMessage(configuration.getString("ServerSystem.Prefix").replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Fly.ArgsWrong")).replace("&", "§"));
             return true;
         }
         if (player.isFlying()) {
             player.setAllowFlight(false);
             player.setFlying(false);
-            player.sendMessage(configuration.getString("ServerSystem.Prefix") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Fly.Disabled")).replace("&", "§"));
+            player.sendMessage(configuration.getString("ServerSystem.Prefix").replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Fly.Disabled")).replace("&", "§"));
             return true;
         }
         player.setAllowFlight(true);
         player.setFlying(true);
-        player.sendMessage(configuration.getString("ServerSystem.Prefix") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Fly.Enabled")).replace("&", "§"));
+        player.sendMessage(configuration.getString("ServerSystem.Prefix").replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Fly.Enabled")).replace("&", "§"));
         return true;
     }
 }

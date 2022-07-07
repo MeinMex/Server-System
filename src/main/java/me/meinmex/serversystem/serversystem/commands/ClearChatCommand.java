@@ -20,7 +20,7 @@ public class ClearChatCommand implements CommandExecutor {
             return true;
         }
         if (!(args.length == 0)) {
-            player.sendMessage(configuration.getString("ServerSystem.Prefix") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.ClearChat.ArgsWrong")).replace("&", "§"));
+            player.sendMessage(configuration.getString("ServerSystem.Prefix").replace("&", "§").replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.ClearChat.ArgsWrong")).replace("&", "§"));
             return true;
         }
         for(Player allPlayers : Bukkit.getOnlinePlayers()){
@@ -29,7 +29,7 @@ public class ClearChatCommand implements CommandExecutor {
                     allPlayers.sendMessage(" ");
                 }
             }
-            allPlayers.sendMessage(configuration.getString("ServerSystem.Prefix") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.ClearChat.Success")).replace("&", "§").replace("%player%", player.getName()));
+            allPlayers.sendMessage(configuration.getString("ServerSystem.Prefix").replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.ClearChat.Success")).replace("&", "§").replace("%player%", player.getName()));
         }
 
 

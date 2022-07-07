@@ -20,10 +20,10 @@ public class HelpCommand implements CommandExecutor {
             return true;
         }
         if (!(args.length == 0)) {
-            player.sendMessage(configuration.getString("ServerSystem.Prefix") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Help.ArgsWrong")).replace("&", "§"));
+            player.sendMessage(configuration.getString("ServerSystem.Prefix").replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Help.ArgsWrong")).replace("&", "§"));
             return true;
         }
-        player.sendMessage(configuration.getString("ServerSystem.Prefix") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Help")).replace("&", "§"));
+        player.sendMessage(configuration.getString("ServerSystem.Prefix").replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Help")).replace("&", "§"));
 
         return true;
     }
