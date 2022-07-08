@@ -16,11 +16,11 @@ public class ClearChatCommand implements CommandExecutor {
         FileConfiguration configuration = ServerSystem.getInstance().configuration;
         Player player = (Player) sender;
         if (!player.hasPermission(Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Permission.ClearChat")))) {
-            player.sendMessage(configuration.getString("ServerSystem.NoPermissions") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Permission.ClearChat")).replace("&", "§"));
+            player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Permission.ClearChat")).replace("&", "§"));
             return true;
         }
         if (!(args.length == 0)) {
-            player.sendMessage(configuration.getString("ServerSystem.Prefix").replace("&", "§").replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.ClearChat.ArgsWrong")).replace("&", "§"));
+            player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§").replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.ClearChat.ArgsWrong")).replace("&", "§"));
             return true;
         }
         for(Player allPlayers : Bukkit.getOnlinePlayers()){
@@ -29,7 +29,7 @@ public class ClearChatCommand implements CommandExecutor {
                     allPlayers.sendMessage(" ");
                 }
             }
-            allPlayers.sendMessage(configuration.getString("ServerSystem.Prefix").replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.ClearChat.Success")).replace("&", "§").replace("%player%", player.getName()));
+            allPlayers.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.ClearChat.Success")).replace("&", "§").replace("%player%", player.getName()));
         }
 
 
