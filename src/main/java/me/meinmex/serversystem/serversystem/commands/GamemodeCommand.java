@@ -64,12 +64,12 @@ public class GamemodeCommand implements CommandExecutor {
                     target.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Other.Target.Creative")).replace("&", "§").replace("%player%", target.getName()));
                     player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Other.Self.Creative")).replace("&", "§").replace("%target%", target.getName()));
                 }
-                case "Adventure", "a", "2" -> {
+                case "adventure", "a", "2" -> {
                     target.setGameMode(GameMode.ADVENTURE);
                     target.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Other.Target.Adventure")).replace("&", "§").replace("%player%", target.getName()));
                     player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Other.Self.Adventure")).replace("&", "§").replace("%target%", target.getName()));
                 }
-                case "Spectator", "sp", "3" -> {
+                case "spectator", "sp", "3" -> {
                     target.setGameMode(GameMode.SPECTATOR);
                     target.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Other.Target.Spectator")).replace("&", "§").replace("%player%", target.getName()));
                     player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Other.Self.Spectator")).replace("&", "§").replace("%target%", target.getName()));
