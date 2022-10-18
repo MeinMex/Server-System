@@ -42,7 +42,7 @@ public final class ServerSystem extends JavaPlugin {
         configuration.addDefault("ServerSystem.Prefix", "&8[&7System&8] &7|&r ");
         configuration.addDefault("ServerSystem.NoPermissions", "&8[&7System&8] &7|&r &cYou need the following permissions to use this command:&4 ");
         configuration.addDefault("ServerSystem.PlayerNotFound", "&8[&7System&8] &7|&r &cThis player ist not online ore dont exists");
-        configuration.addDefault("ServerSystem.ArgsTooMany", "&8[&7System&8] &7|&r &cToo many arguments");
+        configuration.addDefault("ServerSystem.ArgsWrong", "&8[&7System&8] &7|&r &cInvaild arguments");
 
         configuration.addDefault("ServerSystem.Commands.Permission.Help", "ServerSystem.Help");
         configuration.addDefault("ServerSystem.Commands.Permission.Fly", "ServerSystem.Fly");
@@ -50,30 +50,27 @@ public final class ServerSystem extends JavaPlugin {
         configuration.addDefault("ServerSystem.Commands.Permission.ClearChat.Bypass", "ServerSystem.ClearChat.Bypass");
         configuration.addDefault("ServerSystem.Commands.Permission.Gamemode", "ServerSystem.Gamemode");
 
-        configuration.addDefault("ServerSystem.Commands.Messages.Help.ArgsWrong", "&cWrong arguments! Use: /help");
         configuration.addDefault("ServerSystem.Commands.Messages.Help", "&aHelp not set yet!");
 
-        configuration.addDefault("ServerSystem.Commands.Messages.Fly.ArgsWrong", "&cWrong arguments! Use: /fly");
         configuration.addDefault("ServerSystem.Commands.Messages.Fly.Enabled", "&aFly message not set yet! (enable)");
         configuration.addDefault("ServerSystem.Commands.Messages.Fly.Disabled", "&aFly message not set yet! (disable)!");
 
-        configuration.addDefault("ServerSystem.Commands.Messages.ClearChat.ArgsWrong", "&cWrong arguments! Use: /clearchat");
         configuration.addDefault("ServerSystem.Commands.Messages.ClearChat.Success", "%player% &cCleared the Chat!");
 
-        configuration.addDefault("ServerSystem.Commands.Messages.Gammemode.Self.Survival", "&aGammemode (Survival) message not set yet!");
-        configuration.addDefault("ServerSystem.Commands.Messages.Gammemode.Self.Creative", "&aGammemode (Creative) message not set yet!");
-        configuration.addDefault("ServerSystem.Commands.Messages.Gammemode.Self.Adventure", "&aGammemode (Adventure) message not set yet!");
-        configuration.addDefault("ServerSystem.Commands.Messages.Gammemode.Self.Spectator", "&aGammemode (Spectator) message not set yet!");
+        configuration.addDefault("ServerSystem.Commands.Messages.Gamemode.Self.Survival", "&aGamemode (Survival) message not set yet!");
+        configuration.addDefault("ServerSystem.Commands.Messages.Gamemode.Self.Creative", "&aGamemode (Creative) message not set yet!");
+        configuration.addDefault("ServerSystem.Commands.Messages.Gamemode.Self.Adventure", "&aGamemode (Adventure) message not set yet!");
+        configuration.addDefault("ServerSystem.Commands.Messages.Gamemode.Self.Spectator", "&aGamemode (Spectator) message not set yet!");
 
-        configuration.addDefault("ServerSystem.Commands.Messages.Gammemode.Other.Self.Survival", "&aGammemode (Survival) message not set yet! to %target%");
-        configuration.addDefault("ServerSystem.Commands.Messages.Gammemode.Other.Self.Creative", "&aGammemode (Creative) message not set yet! to %target%");
-        configuration.addDefault("ServerSystem.Commands.Messages.Gammemode.Other.Self.Adventure", "&aGammemode (Adventure) message not set yet! to %target%");
-        configuration.addDefault("ServerSystem.Commands.Messages.Gammemode.Other.Self.Spectator", "&aGammemode (Spectator) message not set yet! to %target%");
+        configuration.addDefault("ServerSystem.Commands.Messages.Gamemode.Other.Self.Survival", "&aGamemode (Survival) message not set yet! to %target%");
+        configuration.addDefault("ServerSystem.Commands.Messages.Gamemode.Other.Self.Creative", "&aGamemode (Creative) message not set yet! to %target%");
+        configuration.addDefault("ServerSystem.Commands.Messages.Gamemode.Other.Self.Adventure", "&aGamemode (Adventure) message not set yet! to %target%");
+        configuration.addDefault("ServerSystem.Commands.Messages.Gamemode.Other.Self.Spectator", "&aGamemode (Spectator) message not set yet! to %target%");
 
-        configuration.addDefault("ServerSystem.Commands.Messages.Gammemode.Other.Target.Survival", "&aGammemode (Survival) message not set yet! by %player%");
-        configuration.addDefault("ServerSystem.Commands.Messages.Gammemode.Other.Target.Creative", "&aGammemode (Creative) message not set yet! by %player%");
-        configuration.addDefault("ServerSystem.Commands.Messages.Gammemode.Other.Target.Adventure", "&aGammemode (Adventure) message not set yet! by %player%");
-        configuration.addDefault("ServerSystem.Commands.Messages.Gammemode.Other.Target.Spectator", "&aGammemode (Spectator) message not set yet! by %player%");
+        configuration.addDefault("ServerSystem.Commands.Messages.Gamemode.Other.Target.Survival", "&aGamemode (Survival) message not set yet! by %player%");
+        configuration.addDefault("ServerSystem.Commands.Messages.Gamemode.Other.Target.Creative", "&aGamemode (Creative) message not set yet! by %player%");
+        configuration.addDefault("ServerSystem.Commands.Messages.Gamemode.Other.Target.Adventure", "&aGamemode (Adventure) message not set yet! by %player%");
+        configuration.addDefault("ServerSystem.Commands.Messages.Gamemode.Other.Target.Spectator", "&aGamemode (Spectator) message not set yet! by %player%");
 
 
         configuration.addDefault("ServerSystem.Join.Message.All", "&a%player% joined the server!");

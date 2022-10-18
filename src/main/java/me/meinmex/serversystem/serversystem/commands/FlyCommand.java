@@ -20,7 +20,7 @@ public class FlyCommand implements CommandExecutor {
             return true;
         }
         if (!(args.length == 0)) {
-            player.sendMessage(configuration.getString("ServerSystem.Prefix").replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Fly.ArgsWrong")).replace("&", "§"));
+            player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.ArgsWrong")).replace("&", "§"));
             return true;
         }
         if (player.isFlying()) {

@@ -16,12 +16,12 @@ public class GamemodeCommand implements CommandExecutor {
         FileConfiguration configuration = ServerSystem.getInstance().configuration;
         Player player = (Player) sender;
         if (!player.hasPermission(Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Permission.Gamemode")))) {
-            player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.NoPermissions")).replace("&", "§") + Objects.requireNonNull(Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Permission.Gammemode")).replace("&", "§")));
+            player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.NoPermissions")).replace("&", "§") + Objects.requireNonNull(Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Permission.Gamemode")).replace("&", "§")));
             return true;
         }
 
-        if(args.length == 1 || args.length == 2){
-            player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.ArgsTooMany")));
+        if(!(args.length == 1 || args.length == 2)){
+            player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.ArgsWrong")).replace("&", "§"));
             return true;
         }
 
@@ -30,19 +30,19 @@ public class GamemodeCommand implements CommandExecutor {
             switch (args[0]) {
                 case "survival", "s", "0" -> {
                     player.setGameMode(GameMode.SURVIVAL);
-                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Self.Survival")).replace("&", "§"));
+                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gamemode.Self.Survival")).replace("&", "§"));
                 }
                 case "creative", "c", "1" -> {
                     player.setGameMode(GameMode.CREATIVE);
-                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Self.Creative")).replace("&", "§"));
+                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gamemode.Self.Creative")).replace("&", "§"));
                 }
                 case "Adventure", "a", "2" -> {
                     player.setGameMode(GameMode.ADVENTURE);
-                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Self.Adventure")).replace("&", "§"));
+                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gamemode.Self.Adventure")).replace("&", "§"));
                 }
                 case "Spectator", "sp", "3" -> {
                     player.setGameMode(GameMode.SPECTATOR);
-                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Self.Spectator")).replace("&", "§"));
+                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gamemode.Self.Spectator")).replace("&", "§"));
                 }
             }
             return true;
@@ -56,23 +56,23 @@ public class GamemodeCommand implements CommandExecutor {
             switch (args[0]) {
                 case "survival", "s", "0" -> {
                     target.setGameMode(GameMode.SURVIVAL);
-                    target.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Other.Target.Survival")).replace("&", "§").replace("%player%", target.getName()));
-                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Other.Self.Survival")).replace("&", "§").replace("%target%", target.getName()));
+                    target.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gamemode.Other.Target.Survival")).replace("&", "§").replace("%player%", target.getName()));
+                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gamemode.Other.Self.Survival")).replace("&", "§").replace("%target%", target.getName()));
                 }
                 case "creative", "c", "1" -> {
                     target.setGameMode(GameMode.CREATIVE);
-                    target.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Other.Target.Creative")).replace("&", "§").replace("%player%", target.getName()));
-                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Other.Self.Creative")).replace("&", "§").replace("%target%", target.getName()));
+                    target.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gamemode.Other.Target.Creative")).replace("&", "§").replace("%player%", target.getName()));
+                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gamemode.Other.Self.Creative")).replace("&", "§").replace("%target%", target.getName()));
                 }
                 case "adventure", "a", "2" -> {
                     target.setGameMode(GameMode.ADVENTURE);
-                    target.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Other.Target.Adventure")).replace("&", "§").replace("%player%", target.getName()));
-                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Other.Self.Adventure")).replace("&", "§").replace("%target%", target.getName()));
+                    target.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gamemode.Other.Target.Adventure")).replace("&", "§").replace("%player%", target.getName()));
+                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gamemode.Other.Self.Adventure")).replace("&", "§").replace("%target%", target.getName()));
                 }
                 case "spectator", "sp", "3" -> {
                     target.setGameMode(GameMode.SPECTATOR);
-                    target.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Other.Target.Spectator")).replace("&", "§").replace("%player%", target.getName()));
-                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gammemode.Other.Self.Spectator")).replace("&", "§").replace("%target%", target.getName()));
+                    target.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gamemode.Other.Target.Spectator")).replace("&", "§").replace("%player%", target.getName()));
+                    player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.Gamemode.Other.Self.Spectator")).replace("&", "§").replace("%target%", target.getName()));
                 }
 
             }

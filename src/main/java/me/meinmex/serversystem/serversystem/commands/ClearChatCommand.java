@@ -20,7 +20,7 @@ public class ClearChatCommand implements CommandExecutor {
             return true;
         }
         if (!(args.length == 0)) {
-            player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.Prefix")).replace("&", "§").replace("&", "§") + Objects.requireNonNull(configuration.getString("ServerSystem.Commands.Messages.ClearChat.ArgsWrong")).replace("&", "§"));
+            player.sendMessage(Objects.requireNonNull(configuration.getString("ServerSystem.ArgsWrong")).replace("&", "§"));
             return true;
         }
         for(Player allPlayers : Bukkit.getOnlinePlayers()){
